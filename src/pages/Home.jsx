@@ -226,7 +226,7 @@ function Home () {
       </a>
 
       <Link
-        to="/contact"
+        to="#how-it-works"
         className="border border-[#C6FF5E] text-[#C6FF5E] px-8 py-3 rounded-lg hover:bg-accent hover:text-primary transition"
       >
       How It Works
@@ -350,7 +350,7 @@ function Home () {
 
 {/* How it works section */}
 <section
-  id="whyus"
+  id="how-it-works"
   className="relative py-[100px] px-4 md:px-[4em] overflow-hidden my-10"
   style={{
     backgroundImage: `url(${howItWorks})`,
