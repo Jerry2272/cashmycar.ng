@@ -156,7 +156,7 @@ const LoanForm = ({ onSubmit }) => {
       <button
         type="button"
         onClick={handleSubmit}
-        className="w-full bg-[#c6ff5e] text-white py-3 rounded-lg"
+        className="w-full bg-[#0a1a3c] text-white py-3 rounded-lg"
       >
         Submit Vehicle Loan Application
       </button>
