@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.aboutBg  {
+                    background-image: linear-gradient(120.47deg,  #10436b 10.32%, rgba(16, 67, 107, 0.53)  50.96%, #020101 122.45%), url('../src/assets/hero-banner3.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center; 
+}
+.geoBg{
+    background: url('../src/assets/geoBg.png');
+    background-size: cover;
+    background-position:left top;
+}
+
+.slick-slide {
+   overflow: hidden;
+   border-radius: 8px;
+}
+.slick-slide   img{
+    width: 100%;
+   border-radius: 8px;
+}
+
+.pro{
+    background:  url('./assets/ProcurementBg.png');
+    background-size: cover;
+    background-position: right ;
+}
+
+
+
+
+@media (min-width: 992px) {
+    .pro{
+        background:  url('./assets/ProcurementBg.png');
+    }
+ 
+    
+    .otherService > div:nth-child(1) {
+        grid-row: span 2;  
+    }
+    
+    .otherService > div:nth-child(2) {
+        width: 523px;
+        border-radius: 22.71px; 
+    }
+    
+    .otherService > div:nth-child(3) {
+        width: 225px;
+        height: 215px;
+        border-radius: 22.41px;
+        margin-left: auto;
+    }.otherService > div:nth-child(4) {
+        width: 413px;
+        height: 312px;
+    }
+    .otherService > div:nth-child(5) {
+        width: 413px;
+        height: 312px;
+    }
+    .otherService > div img{
+        width: 100%; 
+        object-fit: cover;
+    }
+    
+}
+/* General arrow style */
+/*  */
