@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 const LoanForm = ({ onSubmit }) => {
@@ -8,12 +9,12 @@ const LoanForm = ({ onSubmit }) => {
     address: "",
     loanAmount: "",
     repaymentDate: "",
-    security: "",
+    securityNature: "",
     vehicleType: "",
     vehicleModel: "",
     vehicleYear: "",
     vehicleOwned: "",
-    vehiclePhotos: null,
+    vehiclePictures: null,
     ownershipProof: null,
   });
 
@@ -26,12 +27,9 @@ const LoanForm = ({ onSubmit }) => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       const formData = new FormData();
-
-      // Append all form fields
       for (let key in form) {
         if (form[key] instanceof FileList) {
           for (let i = 0; i < form[key].length; i++) {
@@ -47,45 +45,92 @@ const LoanForm = ({ onSubmit }) => {
         body: formData,
       });
 
-      if (!response.ok) throw new Error("Failed to submit loan application");
+      if (!response.ok) throw new Error("Failed to submit vehicle loan");
 
       const data = await response.json();
-      alert("Loan application submitted successfully!");
+      alert("Vehicle loan application submitted successfully!");
       console.log(data);
-      if (onSubmit) onSubmit(data);
+      if (onSubmit) onSubmit(form);
     } catch (error) {
       console.error(error);
-      alert("Error submitting your application");
+      alert("There was an error submitting your application");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-h-[80vh] overflow-y-auto p-4 bg-white rounded-lg shadow-md">
+    <form className="space-y-4 max-h-[70vh] overflow-y-auto">
       <input
-        type="text"
         name="fullName"
         placeholder="Full Name"
         onChange={handleChange}
         className="w-full p-3 border rounded"
-        required
       />
 
-      <select name="gender" onChange={handleChange} className="w-full p-3 border rounded" required>
+      <select name="gender" onChange={handleChange} className="w-full p-3 border rounded">
         <option value="">Gender</option>
         <option>Male</option>
         <option>Female</option>
-        <option>Other</option>
       </select>
 
-      <input type="number" name="age" placeholder="Age" onChange={handleChange} className="w-full p-3 border rounded" required />
-      <input type="text" name="address" placeholder="Address" onChange={handleChange} className="w-full p-3 border rounded" required />
-      <input type="number" name="loanAmount" placeholder="How much do you need" onChange={handleChange} className="w-full p-3 border rounded" required />
-      <input type="date" name="repaymentDate" placeholder="When do you intend to repay" onChange={handleChange} className="w-full p-3 border rounded" required />
-      <input type="text" name="security" placeholder="Nature of security" onChange={handleChange} className="w-full p-3 border rounded" />
+      <input
+        name="age"
+        placeholder="Age"
+        type="number"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
 
-      <input type="text" name="vehicleType" placeholder="Vehicle Type" onChange={handleChange} className="w-full p-3 border rounded" />
-      <input type="text" name="vehicleModel" placeholder="Vehicle Model" onChange={handleChange} className="w-full p-3 border rounded" />
-      <input type="number" name="vehicleYear" placeholder="Vehicle Year" onChange={handleChange} className="w-full p-3 border rounded" />
+      <input
+        name="address"
+        placeholder="Address"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="loanAmount"
+        placeholder="How much do you need"
+        type="number"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="repaymentDate"
+        placeholder="When do you intend to repay"
+        type="date"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="securityNature"
+        placeholder="Nature of security"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="vehicleType"
+        placeholder="Vehicle type"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="vehicleModel"
+        placeholder="Vehicle model"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
+
+      <input
+        name="vehicleYear"
+        placeholder="Vehicle year"
+        type="number"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
 
       <select name="vehicleOwned" onChange={handleChange} className="w-full p-3 border rounded">
         <option value="">Is vehicle owned by you?</option>
@@ -93,17 +138,26 @@ const LoanForm = ({ onSubmit }) => {
         <option>No</option>
       </select>
 
-      <label className="block">
-        Attach recent pictures of the car (exterior, interior, engine)
-        <input type="file" name="vehiclePhotos" onChange={handleChange} multiple className="mt-2 w-full" />
-      </label>
+      <input
+        name="vehiclePictures"
+        type="file"
+        multiple
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
 
-      <label className="block">
-        Attach proof of vehicle ownership
-        <input type="file" name="ownershipProof" onChange={handleChange} className="mt-2 w-full" />
-      </label>
+      <input
+        name="ownershipProof"
+        type="file"
+        onChange={handleChange}
+        className="w-full p-3 border rounded"
+      />
 
-      <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+      <button
+        type="button"
+        onClick={handleSubmit}
+        className="w-full bg-[#c6ff5e] text-white py-3 rounded-lg"
+      >
         Submit Vehicle Loan Application
       </button>
     </form>
