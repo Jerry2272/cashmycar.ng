@@ -191,58 +191,58 @@ function Home () {
         {HeroSlide.map((slide, i) => (
           <div key={i} 
           >
-           <section
-  className="relative md:h-[95vh] h-[90vh] flex items-center justify-center overflow-hidden"
-  id="home"
-  style={{
-    backgroundImage: `
-      linear-gradient(rgba(10,26,60,0.5), rgba(10,26,60,0.90)),
-      url(${slide.img})
-    `,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
+<section className="bg-white py-12 px-4 md:px-10 lg:px-20 text-center lg:text-left md:text-left">
+<div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+
+{/* LEFT CONTENT */}
+<div>
+<h1 className="md:text-[57px] text-[30px] font-bold leading-tight font-spaceGrotesk mb-4">
+{slide.title} <span className="text-[#0A1A3C]">{slide.span}</span>
+</h1>
+
+
+<p className="text-gray-600 text-lg mb-8 lg:max-w-lg">
+{slide.description}
+</p>
+
+
+<div className="flex gap-4 lg:flex-wrap lg:justify-start md:justify-start justify-center">
+<button
+onClick={() => setOpenLoanModal(true)}
+className="bg-[#0A1A3C] text-white lg:font-semibold lg:px-8 px-4 py-3 rounded-full hover:scale-105 transition duration-300 shadow-md"
 >
-  {/* Glow Accent Background */}
-  <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#C6FF5E] opacity-20 blur-[120px] rounded-full"></div>
+Apply for a Loan
+</button>
 
-  <div className="relative z-10 text-center px-6 max-w-4xl">
-    
-    <h1 className="md:text-[60px] text-[38px] font-bold text-white leading-tight font-spaceGrotesk mb-4">
-      {slide.title} <span className="text-accent">{slide.span}</span>
-    </h1>
 
-    <p className="md:text-[22px] text-[16px] text-gray-200 mb-8 font-manRope">
-      {slide.description}
-    </p>
+<a
+href="#how-it-works"
+className="border border-[#0A1A3C] px-8 py-3 rounded-full text-[#0A1A3C] hover:bg-gray-100 transition duration-300"
+>
+How It Works
+</a>
+</div>
+</div>
 
-    <div className="flex flex-col sm:flex-row gap-5 justify-center">
-      <a
-        href="#service"
-        className="bg-[#C6FF5E] text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition"
-          onClick={() => setOpenLoanModal(true)}
-      >
-       Apply for a Loan 
-      </a>
 
-      <Link
-        to="#how-it-works"
-        className="border border-[#C6FF5E] text-[#C6FF5E] px-8 py-3 rounded-lg hover:bg-accent hover:text-primary transition"
-      >
-      How It Works
-      </Link>
-    </div>
+{/* RIGHT IMAGE WITH DECORATIVE SHAPE */}
+<div className="relative w-full max-w-lg ml-auto">
 
-    {/* Trust Indicators */}
-    <div className="lg:mt-20 flex justify-center gap-10 text-white text-sm mt-4">
-      <span className='flex flex-col justify-center items-center gap-2'><Lock /> Secure Platform</span>
-      <span className='flex flex-col justify-center items-center gap-2'><Zap /> Fast Processing</span>
-      <span className='flex flex-col justify-center items-center gap-2'><Shield /> Trusted Cooperative</span>
-    </div>
 
-  </div>
+{/* Background shape (matches Otega style) */}
+<div className="absolute -bottom-6 -right-6 w-full h-full bg-[#0A1A3C] rounded-[32px]" />
+
+
+{/* Main image */}
+<img
+src={slide.img}
+alt="Happy customer"
+className="relative rounded-[32px]  w-full object-cover"
+/>
+</div>
+</div>
 </section>
-
           </div>
         ))}
       </Slider>
@@ -251,13 +251,13 @@ function Home () {
     {/* hero section ending */}
     
     {/* about section  */}
-    <section className="about md:grid grid-cols-2 justify-center items-center  md:h-auto    overflow-hidden md:pl-[100px] gap-10 pl-[30px] pr-[30px] pt-[100px] pb-[100px] bg-bgBackground" id='about'>
-      <div className=" " data-aos="zoom-in" data-aos-delay="300">
+    <section className="about md:grid grid-cols-2 justify-center items-center  md:h-auto    overflow-hidden md:pl-[100px] gap-10 pl-[30px] pr-[30px] pt-[100px] pb-[100px] bg-[#C6FF5E]/20" id='about'>
+      <div className="order-2" data-aos="zoom-in" data-aos-delay="300">
         <img src={AboutImg} className='mb-5 w-[97%] rounded-[20px]' alt="" />
       </div>
       <div className=" ">
         <div className=''>
-          <h2 className='text-[28px] md:text-[38px] font-bold text-[#0A1A3C]  font-spaceGrotesk mb-[20px]  ' data-aos="fade-up">About <span className='text-[#C6FF5E]'>CASHMYCAR.NG</span></h2>
+          <h2 className='text-[28px] md:text-[38px] font-bold text-[#000]  font-spaceGrotesk mb-[20px]  ' data-aos="fade-up">About <span className='text-[#0A1A3C]'>CASHMYCAR.NG</span></h2>
           <p className=' text-[17px] font-[400] text-textColor font-manRope leading-[28px] mb-[20px]' data-aos="zoom-in">
        At CASHMYCAR.NG, we believe your assets should work for you. We specialize in providing streamlined credit solutions by leveraging the equity in your vehicle.
           </p>
@@ -303,45 +303,31 @@ function Home () {
     {/* Services Carousel */}
     <Carousel {...settings}>
       {Services.map((service, i) => (
-        <div key={i} className="px-2 relative">
-          <a
-            href={service.link}
-            className="block relative h-[430px] rounded-[12px] overflow-hidden shadow-md group"
-          >
-            {/* Image */}
-            <img
-              src={service.serviceImg}
-              alt={service.text}
-              className="w-full h-full object-cover transform transition duration-500 group-hover:scale-105"
-            />
+        <div key={i} className="px-2">
+  <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
 
-            {/* Image Overlay */}
-            <div className="absolute inset-0 group-hover:bg-black/40 transition duration-300"
-                          style={{
-                  backgroundImage: `linear-gradient(120.47deg,  #10436b 10.32%, rgba(16, 67, 107, 0.53)  50.96%, #020101 122.45%)`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize:  'cover',
-                  backgroundPosition: 'center',
-                  borderRadius: '0px'
-                }}
-            
-            ></div>
+    {/* Image */}
+    <div className="h-[220px] overflow-hidden">
+      <img
+        src={service.serviceImg}
+        alt={service.text}
+        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+      />
+    </div>
 
-            {/* Text Gradient Overlay */}
-            <div
-              className="absolute bottom-0 left-0 w-full p-4 text-white z-10"
-              style={{
-                background:
-                  "linear-gradient(1.98deg, rgba(2,1,1,0.65) 66.76%, rgba(2,1,1,0) 93.65%)",
-                backdropFilter: "blur(6px)",
-              }}
-            >
-              <h2 className="text-[22px] md:text-[26px] font-semibold font-manRope pl-4">
-                {service.text}
-              </h2>
-            </div>
-          </a>
-        </div>
+    {/* Text */}
+    <div className="p-6 text-center">
+      <h3 className="text-[20px] font-semibold text-[#0A1A3C] font-manRope">
+        {service.text}
+      </h3>
+
+      <p className="text-sm text-gray-500 mt-2">
+        {service.desc}
+      </p>
+    </div>
+  </div>
+</div>
+
       ))}
     </Carousel>
   </section>
@@ -516,7 +502,7 @@ function Home () {
 
    <button
   onClick={() => window.open('https://wa.me/2349133822666', '_blank')}
-  className="fixed bottom-6 right-6 z-50 bg-[#0A1A3C] hover:scale-[1.1] text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2"
+  className="fixed bottom-6 right-4 z-50 bg-[#0A1A3C] hover:scale-[1.1] text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2"
 >
   <FaWhatsapp size={20} />
   Chat Us

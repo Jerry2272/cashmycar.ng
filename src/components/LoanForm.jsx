@@ -1,11 +1,8 @@
-
 import { useState } from "react";
 
 const LoanForm = ({ onSubmit }) => {
   const [form, setForm] = useState({
     fullName: "",
-    gender: "",
-    age: "",
     address: "",
     loanAmount: "",
     repaymentDate: "",
@@ -59,99 +56,134 @@ const LoanForm = ({ onSubmit }) => {
 
   return (
     <form className="space-y-4 max-h-[70vh] overflow-y-auto">
-      <input
-        name="fullName"
-        placeholder="Full Name"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Full Name */}
+      <div>
+        <label className="block mb-1 font-semibold">Full Name</label>
+        <input
+          name="fullName"
+          placeholder="Enter your full name"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <select name="gender" onChange={handleChange} className="w-full p-3 border rounded">
-        <option value="">Gender</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
+      {/* Address */}
+      <div>
+        <label className="block mb-1 font-semibold">Address</label>
+        <input
+          name="address"
+          placeholder="Enter your address"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="age"
-        placeholder="Age"
-        type="number"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Loan Amount */}
+      <div>
+        <label className="block mb-1 font-semibold">How much do you need</label>
+        <input
+          name="loanAmount"
+          type="number"
+          placeholder="Enter loan amount"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="address"
-        placeholder="Address"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Repayment Date */}
+      <div>
+        <label className="block mb-1 font-semibold">When do you intend to repay</label>
+        <input
+          name="repaymentDate"
+          type="date"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="loanAmount"
-        placeholder="How much do you need"
-        type="number"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Nature of Security */}
+      <div>
+        <label className="block mb-1 font-semibold">Nature of security</label>
+        <input
+          name="securityNature"
+          placeholder="Enter nature of security"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="repaymentDate"
-        placeholder="When do you intend to repay"
-        type="date"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Vehicle Type */}
+      <div>
+        <label className="block mb-1 font-semibold">Vehicle type</label>
+        <input
+          name="vehicleType"
+          placeholder="e.g., Car, Motorcycle"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="securityNature"
-        placeholder="Nature of security"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Vehicle Model */}
+      <div>
+        <label className="block mb-1 font-semibold">Vehicle model</label>
+        <input
+          name="vehicleModel"
+          placeholder="e.g., Toyota Corolla"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="vehicleType"
-        placeholder="Vehicle type"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Vehicle Year */}
+      <div>
+        <label className="block mb-1 font-semibold">Vehicle year</label>
+        <input
+          name="vehicleYear"
+          type="number"
+          placeholder="e.g., 2020"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <input
-        name="vehicleModel"
-        placeholder="Vehicle model"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Vehicle Ownership */}
+      <div>
+        <label className="block mb-1 font-semibold">Is vehicle owned by you?</label>
+        <select
+          name="vehicleOwned"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        >
+          <option value="">Select</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
 
-      <input
-        name="vehicleYear"
-        placeholder="Vehicle year"
-        type="number"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Vehicle Pictures */}
+      <div>
+        <label className="block mb-1 font-semibold">
+          Attach recent pictures of the car: exterior, interior, engine
+        </label>
+        <input
+          name="vehiclePictures"
+          type="file"
+          multiple
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
-      <select name="vehicleOwned" onChange={handleChange} className="w-full p-3 border rounded">
-        <option value="">Is vehicle owned by you?</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-
-      <input
-        name="vehiclePictures"
-        type="file"
-        multiple
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
-
-      <input
-        name="ownershipProof"
-        type="file"
-        onChange={handleChange}
-        className="w-full p-3 border rounded"
-      />
+      {/* Ownership Proof */}
+      <div>
+        <label className="block mb-1 font-semibold">Attach proof of ownership</label>
+        <input
+          name="ownershipProof"
+          type="file"
+          onChange={handleChange}
+          className="w-full p-3 border rounded"
+        />
+      </div>
 
       <button
         type="button"
