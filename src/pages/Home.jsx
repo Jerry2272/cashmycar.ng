@@ -14,9 +14,7 @@ import howItWorks from '../assets/hero-banner.jpg'
 
 import 'aos/dist/aos.css'; // AOS styles
 import AOS from 'aos'
-import { Navbar } from '../components/Navbar';
-import { Link } from 'react-router-dom';
-import Client from '../molecules/Client';
+import { Navbar } from '../components/Navbar'; 
 import { Car, SearchCheck, Banknote, Zap, Lock, FileText, Shield } from "lucide-react";
 
 import { useState } from "react";
