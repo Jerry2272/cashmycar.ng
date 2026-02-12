@@ -13,7 +13,7 @@ export const Navbar = () => {
     { name: 'Home', link: '#home' },
     { name: 'About Us', link: '#about' },
     { name: 'FAQs', link: '#faq' },
-    { name: 'Contact Us', link: '#contact' },
+    { name: 'How it Works', link: '#how-it-works' },
   ];
 
   return (

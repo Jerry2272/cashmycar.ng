@@ -67,7 +67,7 @@ export const Footer = () => {
             <li><a href="#services" className="hover:text-white">Services</a></li>
             {/* <li><a href="#gallery" className="hover:text-white">Gallery</a></li> */}
             <li><a href="#faq" className="hover:text-white">FAQs</a></li>
-            <li><a href="#contact" className="hover:text-white">Contact</a></li>
+            <li><a href="#how-it-works" className="hover:text-white">How it Works</a></li>
           </ul>
         </div>
 

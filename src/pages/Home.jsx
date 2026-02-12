@@ -285,8 +285,9 @@ className="relative rounded-[32px]  w-full object-cover"
 
     {/* services section  */}
   <section
+
     className="service pt-[100px] md:mb-[200px] md:ml-[4em] md:pr-[0px] px-4 overflow-hidden"
-    id="service"
+    id="services"
   >
     {/* Section Title */}
     <div className="">
