@@ -17,8 +17,8 @@ export default {
       whiteSoft: "#FFFFFF",
       },
       fontFamily:{
-        manRope: ['Manrope', 'sans-serif'],
-        spaceGrotesk: ['Space Grotesk', 'sans-serif'], // Add this line
+        manRope: ['Plus Jakarta Sans', 'sans-serif'],
+        spaceGrotesk: ['Plus Jakarta Sans', 'sans-serif'], // Add this line
       }
       
     },

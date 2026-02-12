@@ -195,7 +195,7 @@ function Home () {
 
 {/* LEFT CONTENT */}
 <div>
-<h1 className="md:text-[57px] text-[30px] font-bold leading-tight font-spaceGrotesk mb-4">
+<h1 className="md:text-[50px] text-[28px] font-bold leading-tight font-spaceGrotesk mb-4">
 {slide.title} <span className="text-[#0A1A3C]">{slide.span}</span>
 </h1>
 
